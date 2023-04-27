@@ -41,8 +41,8 @@ services:
     logstash:
         container_name: logstash-01
         volumes:
-            - /home/lian/ELK/1 Introduction and Installation/dockerComposeEKLF/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
-            - /home/lian/ELK/1 Introduction and Installation/dockerComposeEKLF/logstash.yaml:/usr/share/logstash/config/logstash.yml:ro 
+            - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
+            - ./logstash.yaml:/usr/share/logstash/config/logstash.yml:ro 
         image: 'docker.elastic.co/logstash/logstash:7.17.0'
         depends_on:   
              kibana-01:
@@ -56,7 +56,7 @@ services:
         container_name: filebeat-01
         command: --strict.perms=false
         volumes:
-            - /home/lian/ELK/1 Introduction and Installation/dockerComposeEKLF/filebeat.docker.yaml:/usr/share/filebeat/filebeat.yml:ro
+            - ./filebeat.docker.yaml:/usr/share/filebeat/filebeat.yml:ro
             - /var/lib/docker/containers:/var/lib/docker/containers:ro
             - /var/run/docker.sock:/var/run/docker.sock:ro
         #   - /home/lian/ELK/1 Introduction and Installation/dockerComposeJavaApp/data:/usr/share/filebeat/data:rw
@@ -68,4 +68,4 @@ services:
             - elastic              
 networks:
   elastic:
-    name: elastic      
+    name: elastic
