@@ -1,5 +1,5 @@
 ## --project-name
-version: '3.8'
+version: '2'
 services:
     filebeat:
         user: root
