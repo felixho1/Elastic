@@ -15,7 +15,7 @@ filebeat.inputs:
 - type: filestream
   enabled: true
   paths:
-    - /var/log/messages
+    - /monitor/log/messages
   parsers:
     - syslog:
         format: rfc3164
