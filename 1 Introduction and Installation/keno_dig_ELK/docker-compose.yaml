@@ -32,6 +32,8 @@ services:
 
     logstash:
         container_name: logstash-01
+        ports:
+            - '5400:5400'
         volumes:
             - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
             - ./logstash.yaml:/usr/share/logstash/config/logstash.yml:ro 
