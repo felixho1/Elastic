@@ -24,4 +24,4 @@ filebeat.inputs:
         add_error_key: true
 
 output.logstash:
-   hosts: ["logstash-01:5400"]  
+   hosts: ["qa-test.keno:5400"]  
